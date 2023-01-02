@@ -208,4 +208,4 @@ docker run -p 8080:8080 spring/service
 [Theo Barkhuizen](https://www.linkedin.com/in/theodor-barkhuizen-b18597127/)
 
 ## License ##
-This project is licensed under the terms of the Digicert license.
+This project is licensed under the terms of the marionete license.
