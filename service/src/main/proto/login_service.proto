@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.marionete.proto.lib";
+
+package com.marionete.proto.lib;
+
+service LoginService {
+  rpc login (LoginRequest) returns (LoginResponse) {}
+  rpc getUserAccount (TokenRequest) returns (UserAccountResponse) {}
+}
+
+service AccountInfoService {
+  rpc getAccountInfo (TokenRequest) returns (AccountInfoResponse) {}
+}
+
+service UserInfoService {
+  rpc getUserInfo (TokenRequest) returns (UserInfoResponse) {}
+}
+
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  string token = 1;
+}
+
+message AccountInfoResponse {
+  string accountNumber = 1;
+}
+
+message UserInfoResponse {
+  string name = 1;
+  string surname = 2;
+  string sex = 3;
+  int32 age = 4;
+}
+
+message TokenRequest {
+  string token = 1;
+}
+
+message UserAccountResponse {
+  AccountInfoResponse accountInfo = 1;
+  UserInfoResponse userInfo = 2;
+}

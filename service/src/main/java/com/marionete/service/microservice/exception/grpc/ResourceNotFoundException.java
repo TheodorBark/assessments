@@ -1,0 +1,15 @@
+package com.marionete.service.microservice.exception.grpc;
+
+import java.util.Map;
+
+public class ResourceNotFoundException extends BaseException {
+
+    public ResourceNotFoundException(String message, Map<String, String> errorMetaData, Throwable cause) {
+        this(ErrorCode.RESOURCE_NOT_FOUND,message, errorMetaData, cause);
+    }
+
+    public ResourceNotFoundException(ErrorCode errorCode,
+                                     String message, Map<String, String> errorMetaData, Throwable cause) {
+        super(errorCode,message, errorMetaData, cause);
+    }
+}

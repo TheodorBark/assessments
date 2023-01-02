@@ -1,0 +1,40 @@
+server:
+  port: 8080
+  error:
+    whitelabel:
+      enabled: false
+
+spring:
+  application:
+    name: marionete-comms-framework
+
+grpc:
+  server:
+    port-number: 9090
+    name: "localhost"
+
+  jwt:
+    algorithm: "HmacSHA256"
+    secret: "secret"
+    expirationSec: 3600
+
+logging:
+  level:
+    web: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: mappings,beans,env,caches,metrics,health,info
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+      group:
+        liveness:
+          include: ping
+          show-details: always
+        readiness:
+          show-details: always
